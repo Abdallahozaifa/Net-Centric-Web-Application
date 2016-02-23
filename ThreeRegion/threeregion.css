@@ -1,0 +1,39 @@
+a:link{color: white; font-family: Sans-Serif; font-weight: bold; }
+a:visited{color: white; font-weight: normal}
+a:hover{color: orange}
+a:active{font-style: italic}
+
+/*#navigationbar {color: white; background-color: Gray}*/
+#navigationbar {color: white; font-size: 1.4em; background-image: url('linen.jpg');}
+#sidenavigation {float: left; height: 600px; width: 150px; background-image: url('linen.jpg');}
+ 
+
+#content {margin-left: 10em; height:600px;}
+#cframe { display: block; width:100%; height:100%; }
+#sframe { display: block; width:100%; height:100%;}
+
+.topnavigationlink {clear: left; margin-left: 1em; font-size: 1.1em}
+.sidenavigationlink {font-size: 1em}
+
+#pagefooter {clear: left}
+#footer
+{
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+	background-color: black;
+	text-align: center
+}
+.sideroot
+{
+	font-family: Sans-Serif;	
+	font-weight: bold;
+	font-size: 1.3em;
+	color: white;
+}
+
+#clock{
+    margin-left:87%;
+    display:inline;
+    margin-top: 15%;
+}

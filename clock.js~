@@ -1,0 +1,21 @@
+// JavaScript source code
+
+
+function showTime() {
+    var elt = document.getElementById("clock");
+    var t = new Date();
+    elt.innerHTML = t.toLocaleTimeString();
+    //setTimeout(showTime, 1000);
+}
+
+function showBrowserInfo() {
+    console.log(window.navigator.appName);
+    console.log(window.navigator.appVersion);
+    console.log(window.navigator.appCodeName);
+};
+
+window.onload = function () {
+    showTime();
+    setInterval(showTime, 1000);
+    showBrowserInfo();
+};
