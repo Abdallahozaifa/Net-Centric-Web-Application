@@ -7,12 +7,12 @@ Learn git basics from here or any other source https://git-scm.com/book/en/v2/Ge
 
 3. Google anything else.
 
-LAB 5
-Hozaifa Abdalla:
-Working on 
-
-Daniel Lopez:
-Working on
-
-Alex Keifer:
-Working on
+  #LAB 5 <br>
+  Hozaifa Abdalla: <br>
+  Working on 
+  
+  Daniel Lopez: <br>
+  Working on
+  
+  Alex Keifer: <br>
+  Working on
