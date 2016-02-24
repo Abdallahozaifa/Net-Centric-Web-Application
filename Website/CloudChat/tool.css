@@ -1,0 +1,19 @@
+#qset {
+  background:#98bf21;
+  position:absolute;
+  font-size: 1.2em;
+}
+fieldset {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  /*border: solid 1px black;*/
+  border-radius: 8px;
+ }
+legend {
+  background: orange;
+  border: solid 1px black;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 2px;
+ }       
