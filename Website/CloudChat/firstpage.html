@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+          var sideFrameWin = parent.document.getElementById("sframe").contentWindow;
+          sideFrameWin.location = "/CloudChat/side.html";
+          
+          //use an external service to get the client machine's IP
+          //This will be used to generate a unique user ID
+          $.get("http://ipinfo.io", function(response) {
+              parent.myIP = response.ip;
+              //console.log(parent.myIP);
+          }, "jsonp");
+
+        };
+    </script>
+  </head>
+  <body>
+        <h1 class="heading">Instructions</h1>
+        <p id="instruction">
+        Our goal is to develop a RESTful Web service called CloudChat.
+        </p>
+        <p id="step1">
+        The web server hosted by Node should be able to work with the CloudChat web service (say, hosted by TomCat or GlassFish).
+        </p>
+        <p id="step2">
+        The side region should comtain buttons through which a user can register to and later join this service. The user may also want to know who are the active users on line, or find out who is the person who have contributed the most (potential leaders in the community).
+        </p>
+        <p id="step3">
+        The main service offered by this RESTful web service is to allow users to freely share messages with each other, where the messages may be organized by themes (or topics). Whenever a user sends in a new message, it is first filtered by this service. All messages passed the filter will be broadcasted to all the active users.
+        </p><br>
+  </body>
+</html>
