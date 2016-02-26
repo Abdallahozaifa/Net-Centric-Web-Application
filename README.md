@@ -13,6 +13,7 @@ Learn git basics from here or any other source https://git-scm.com/book/en/v2/Ge
     * Create another folder called “Schedule” to hold all the files related to this function
     * Add a link in the navigation bar. When this link is clicked, myschedule.html is loaded into the content frame.
     * The file myschedule.html should load the side.html located in the Schedule folder (It may simply show “the schedule is subject        to changes”). 
+    * Create Injection Function that injects data received from the server into the table. 
   
   Daniel Lopez: <br>
   # Working on
