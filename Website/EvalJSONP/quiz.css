@@ -1,0 +1,68 @@
+
+body{ 
+    font: 14px Georgia, serif; 
+}
+
+#page-wrap{ 
+    width: 500px; margin: 0 auto; 
+}
+
+h1{ 
+    margin: 25px 0; 
+    font: 14px Georgia, Serif; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+}
+
+#quiz ul {
+   margin: 0 0 10px 20px;
+}
+
+#quiz ul li {
+   margin: 0 0 10px 0;
+   list-style-type: none;
+}
+
+#quiz ul li div {
+   padding: 4px 0;
+}
+
+#quiz h3 {
+   font-size: 17px; 
+   margin: 0 0 1% 0; 
+   color: #666;
+}
+
+#results {
+    font: 44px Georgia, Serif;
+}
+
+
+.previous, .next, .submitButton, .start, .cancel{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 43.53365707397461px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-transform: uppercase;
+    white-space: pre;
+    width: 50;
+    align-items: flex-start;
+    background: rgb(100, 136, 128) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+    font: normal normal normal 13.84615421295166px/22px Lato, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*margin: 1.5384615659713745px 1.5384615659713745px 1.5384615659713745px 106.45433044433594px;*/
+    outline: rgb(255, 255, 255) none 0px;
+    /*padding: 11px 30.000001907348633px;*/
+    margin-top: 2%;
+}#INPUT_1
+
+form{
+    display:none;
+    background:blue;
+    margin-top:1000px;
+}
+
+
