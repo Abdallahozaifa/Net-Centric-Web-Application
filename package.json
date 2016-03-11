@@ -1,0 +1,23 @@
+{
+  "name": "netcentricwebapplication",
+  "version": "1.0.0",
+  "description": "Net Centric Computing Web Application using nodeJS and ExpressJS used for a learning experience",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "node webserver.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdallahozaifa/Net-Centric-Web-Application.git"
+  },
+  "author": [
+	"Hozaifa Abdala <Abdallahozaifa19527@gmail.com>",
+        "Daniel Lopez <alk5572@psu.edu>",
+    	"Alex Kiefer <alk5572@psu.edu>"
+   ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abdallahozaifa/Net-Centric-Web-Application/issues"
+  },
+  "homepage": "https://github.com/Abdallahozaifa/Net-Centric-Web-Application#readme"
+}
