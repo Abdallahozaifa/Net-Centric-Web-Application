@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Quiz</title>
+        <link rel="stylesheet" type="text/css" href="quiz.css">
+         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    </head>
+
+    <body>
+        
+        <form id="quiz" onsubmit="return false" target="dummyframe">		
+            <ul>                                     
+                <h3 id="question"></h3>
+                <li>   
+                    <div>
+                        <input type="radio" name="quiz" id="question1" value="A" />
+                        <label id="choice1"></label>
+                    </div>
+                </li>
+                
+                 <li>
+                    <div>
+                        <input type="radio" name="quiz" id="question2" value="B" />
+                        <label id="choice2"> </label>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div>
+                        <input type="radio" name="quiz" id="question3" value="C" />
+                        <label id="choice3"> </label>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div>
+                        <input type="radio" name="quiz" id="question4" value="D" />
+                        <label id="choice4"></label>
+                    </div>
+                  </li>              
+            </ul>
+        </form>
+        
+        <h2>Navigation</h2>
+        <button type="button" class="start" id="start">Start</button>
+        <button type="button" class="previous" id="previous">Previous</button>
+        <button type="button" class="next" id="next">Next</button> 
+        <button type="button" class="submitButton" id="submit">Submit</button>
+        
+        <form id="emailForm" action="/EvalTool/sendmail" target="dummyframe" method="post">
+            <fieldset>
+                <label for="name">From Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter your full name" />
+                <br>
+                <label for="email">From Email:</label>
+                <input type="email" id="femail" name="femail" placeholder="Enter your email address" />
+                <br><hr>
+                <label for="name">To Name:</label>
+                <input type="text" id="tname" name="tname" placeholder="Enter recipients full name" />
+                <br>
+                <label for="email">To Email:</label>
+                <input type="email" id="temail" name="temail" placeholder="Enter recipients email address" />
+                <br>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" />
+                <br><hr>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" placeholder="What's on your mind?"
+                          rows="5" cols="80"></textarea>
+                <br>
+                <input type="submit" value="Send message" id="emailbutton"/>
+                
+            </fieldset>
+            <iframe name="dummyframe" id="dummyframe" width="0" height="0"></iframe>
+        </form>
+    </body>
+    <script src="quizContent.js"></script>
+    
+</html>

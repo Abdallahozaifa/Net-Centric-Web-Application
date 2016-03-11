@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SWENG 465:  Web Services</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <style>
+            ul{list-style-type: none; margin:0}
+            h1{font-size:5; font-weight:bold; margin:0}
+            h2{font-size:4; font-weight:bold; color: #2E74B5; margin:0}
+            h3{font-size:5; font-weight:bold; color: #2E74B5; margin:0}
+            table{border-collapse: collapse;}
+            td {border: 1px black solid;}            
+        </style>
+        
+        <!--This makes a style for paragraph formatting using CSS-->     
+        <STYLE TYPE="text/css">
+        <!--
+        .indented
+         {
+            padding-left: 30pt;
+         }
+        -->
+        .titleHeader {
+            margin: 0cm;
+            font-size:2em;
+            font-weight: bold;
+            text-align:center;
+        }
+        .subtitleHeader {
+            margin: 0cm;
+            font-size:1.5em;
+            font-weight: normal;
+            text-align:center;
+        }
+        #tocTitle {
+            font-family: "Times New Roman";
+            font-size:1.5em;
+            font-weight: bold;
+            color: blue; 
+            margin:0;
+        }
+
+        </STYLE>
+        <script type="text/javascript">
+            window.onload = function () {
+              var sideFrameWin = parent.document.getElementById("sframe").contentWindow;
+              sideFrameWin.location = "/Syllabus/side.html";
+            };
+        </script>
+        <script src="../tableofcontents.js"></script>
+    </head>
+    <body>    
+<!--##########################################################################################-->	
+<div name="pageTitleHeader">
+    <p class=titleHeader>CMPSC 421: Net-Centric Computings</p>
+    <p class=subtitleHeader>Computer Science and Software Engineering</p>
+    <br><br>
+</div>
+
+
+<div id="contents">
+<!--##########################################################################################-->	
+<br/>
+<h1 id="instructorHeader">Instructor</h1>
+        <div id="instructor">
+            <ul style="margin: 0">
+                <li>Dr. Xiaocong (Simon) Fan </li>
+                <li>Associated Professor of Computer Science and Software Engineering</li>
+                <li>xfan@psu.edu</li>
+                <li>Phone: (814) 898-6562</li>
+            </ul>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Office and office hours</h1>
+<div id="office">
+            <ul style="margin: 0">
+                <li>Burk 159</li>
+                <li>Monday 2:30-4:00 pm, and Wednesday 2:30-4:00 pm</li>
+            </ul>            
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Course Description:</h1>
+    <div id="course_description">
+            <p class="indented" style="margin:0">
+                The goal of the course is to introduce students to the most significant and exciting computing paradigm—net-centric computing and service-oriented computing, which is expected to have an impact on all aspects of software construction at least as wide as that of object-oriented paradigm. This is a wide area and it is ever-evolving. We focus on the following aspects:
+            </p>
+            <p class="indented">
+                On the client: We will learn Cascading Style Sheets, JavaScript and AJAX to develop the client side of Rich Web Applications. 
+            </p>
+            <p class="indented">
+                For client-server-communication: We will learn how to create and validate XML documents and use these as the primary language for transmission of data from the server to the client. We will also consider how JavaScript Object Notation (JSON) can sometimes be used as a viable alternative to XML for server to client data transmission. 
+            </p>
+            <p class="indented">
+                On the server: We will learn about a variety of server-side technologies, including XML binding tools, JSP, and security. We especially focus on web services and learn how servers (or non-browser clients) may consume RESTful or SOAP-based web services. 
+            </p>
+            <p class="indented">
+                Students will gain an in-depth understanding of the concepts and technical issues underpinning Web applications, and know how to use Web services technology effectively to design and develop complex net-centric systems for solving real-life problems. 
+            </p>
+            <br/>
+        </div>	
+<!--##########################################################################################-->		
+<h1>Textbook(s) and other required material</h1>    
+    <div id="textbooks">
+        <h2 id="required">Required</h2>
+                <ul style="margin: 0">
+                        <li><i>Java Web Services</i></li>
+                    <li>Martin Kailin, O'Reilly, 2013</li>
+                    <li>ISBN: 978-1449365110</li>
+                </ul>
+        <h2 id="reference">Reference</h2>
+                    <ol style="margin: 0">
+                        <li><i>Dynamic Web Application Development using XML and Java</i><br>
+                                David Parsons, Cengage Learning, 2008<br/>
+                                ISBN: 978-1844805419
+                        </li>
+                        <li><i>XML: Visual Quickstart Guide (2nd Edition)</i><br>
+                                Kevin Howard Goldber, Peachpit Press, 2008<br/>
+                                ISBN: 978-0321559678
+                        </li>
+                        <li><i>JavaScript: The Definitive Guide</i><br>
+                                David Flanagan, O'Reilly Media, 2011<br/>
+                                ISBN: 978-0596805524
+                        </li>
+                    </ol>		
+            
+                   <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Course Objectives</h1>        
+    <div id="course_objectives">
+            <p style="margin:0">
+                Upon completion of the course, students will know:
+            </p>
+            <ol>
+                <li>Web MVC architecture</li>
+                <li>Client-side techniques: CSS, Javascipt, jQuery</li>
+                <li>Server-side techniques: JSP, XML, processing, EJB</li>
+                <li>Namespaces in XML and their roles in SOA</li>
+                <li>Fundamental XML Schema for describing document structures</li>
+                <li>Fundamental WSDL for describing Web Services</li>
+                <li>RESTful Web Services</li>
+                <li>SOAP-based Web services and how to handle SOAP messages</li>
+                <li>Steps to consume online web services </li>
+                <li>How to deploy Web Services using Tomcat and Glassfish</li>
+                <li>Web Services security, including user authentication, https</li>
+                <li>Service-oriented architecture (SOA) for developing distributed software systems</li>              
+            </ol>
+            <br/>
+        </div>
+<!--##########################################################################################-->		
+<h1>Class/Laboratory Schedule</h1>    
+    <div id="schedule">
+            <TABLE style="margin-left:2em">
+                <TR><TH>Section 001:</TH></TR>
+                <TR>
+                    <TD style="border: none">Lectures:</TD> <TD style="border: none">M W</TD> <TD style="border: none">12:20 PM - 1:10 PM 147 Burke</TD>
+                </TR>
+                <TR>
+                    <TD style="border: none">Lab:</TD> <TD style="border: none">F</TD> <TD style="border: none">12:20 PM - 1:10 PM 147 Burke</TD>
+                </TR>
+            </TABLE>
+            <br/>
+        </div>
+<!--##########################################################################################-->		
+<h1>Relationship of course to ABET program outcomes</h1>
+    <div id="relationship">
+            <ol style="margin: 0">
+                <li>Program outcome <span style="background-color: #FFFF00">d</span>: This course requires students to form multidisciplinary (CS and SE majors) teams</li>
+                <li>Program outcome <span style="background-color: #FFFF00">CS-h</span> and <span style="background-color:#7CFC00">SE-i</span>: This course requires students to learn by themselves additional materials on Javascript, XML, JSON, JSP, ANT.</li>
+                <li>Program outcome <span style="background-color: #FFFF00">CS-i</span> and <span style="background-color:#7CFC00">SE-k</span>: This course requires students to use NetBeans IDE, Node.js, Tomcat, and Glassfish.</li>
+                <li>Program outcome <span style="background-color:#7CFC00">SE-q</span>: This course requires students to design and implement a web application built upon Web Services.</li>           
+            </ol>        
+            <br/>
+        </div>
+<!--##########################################################################################-->		
+<h1>Grading Criteria</h1>
+    <div id="grading">
+                <p class="indented">Final grading is based on attendance, quizzes, lab assignments and group projects. 
+            The following weights are assigned to the assessed components of the course:</p>
+            <table style="border: 1px black solid; margin: auto">
+                <tr><th  colspan="2" style="color: white; background-color: #0070C0">Activities and Assignments</th></tr>
+                <tr>
+                    <td>Attendance</td> <td>10%</td>
+                </tr>
+                <tr>
+                    <td>Quizzes</td> <td>10%</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #E2EFD9">Lab (13)</td> <td style="background-color: #E2EFD9">50%</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #E2EFD9">Course Project</td> <td style="background-color: #E2EFD9">20%</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #E2EFD9">Final Project Deliverables</td> <td style="background-color: #E2EFD9">10%</td>
+                </tr>
+            </table>
+        <p class="indented">Assessment is based on 100 points with letter grades being assigned as follows:</p>
+        <table style="border: 1px black solid; margin: auto">
+            <tr style="background-color: #FFCC99">
+                <td>A</td> <td>A-</td> <td>B+</td> <td>B</td> <td>B-</td> <td>C+</td> <td>C</td> <td>D</td> <td>F</td>
+            </tr>
+            <tr>
+                <td>93-100</td> <td>89-92</td> <td>85-88</td> <td>80-84</td> <td>75-79</td> <td>70-74</td> <td>65-69</td> <td>60-64</td> <td>0-59</td>
+            </tr>
+        </table>
+        <br/>
+        </div>
+<!--##########################################################################################-->
+<div id="Quizzes">
+    <h2>Quizzes</h2>        
+        <div id="quizzes">
+                <p class="indented" style="margin:0">
+                Quizzes will be given over the course of the semester to encourage your ongoing attention to course material. 
+                Covered topics will be drawn largely from the lectures and assigned work.
+                </p>
+                <br/>
+        </div>
+
+<!--##########################################################################################-->
+    <h2>Team Activities</h2>  
+        <div id="team_activities">
+                <p class="indented" style="margin:0">
+                    Both labs and course projects are group assignment. <span style="background-color: #FFFF00">Each group should have 3 students, with both CS and SE majors.</span> 
+                    Each team should have one being designated as the <span style="background-color:#7CFC00">submitter</span>, who should be responsible for any final work submissions. 
+                    You can form your own team in the first week. I will assign a number to each team. You should use the assigned number to identify all your submitted work.
+                    Your individual grade for the team activities (labs and projects) will reflect your peer’s evaluations that will be performed at the end of the semester. 
+                    At the end of the semester you will also produce a one page personal contribution essay detailing your involvement in the production of project deliverables.
+                    In extreme cases, students that do not contribute to team activities will be asked to do the work on their own.
+                </p>
+                <br/>
+                <p class="indented" style="margin:0">
+                    Your individual grade for the team activities (labs and projects) will reflect your peer’s evaluations that will be performed at the end of the semester. 
+                w   At the end of the semester you will also produce a one page <i>personal contribution essay</i> detailing your involvement in the production of project deliverables. 
+                    In extreme cases, students that do not contribute to team activities will be asked to do the work on their own.
+                </p>
+                <br/>
+            </div>
+<!--##########################################################################################-->
+    <h2>Labs</h2>  
+        <div id="labs">
+                <p class="indented" style="margin:0">
+                    The hands-on laboratory component concentrates mainly on the use of Java techniques to develop Web applications. 
+                    The purpose of the lab assignments is to reinforce your understanding of the material taught in class, and encourage you to do research to 
+                    broaden your knowledge on corresponding topics. <span style="background-color: #FFFF00">The labs are group assignments.</span> 
+                    Each group should <font color="#b20000">work as a team effectively</font> to finish the assignments. 
+                </p>
+                <br/>
+                <p class="indented" style="margin:0">
+                    Labs are assigned on a weekly basis. Typically, the assignment for Friday’s lab will be posted to Angel <b>on Thursday</b>. 
+                    Lab reports are due by <b><font color="#FF0000">midnight (11:59pm) Wednesday</font></b> of the following week. 
+                    Each team should have a person responsible for submitting your lab reports to the designated drop-box on Angel. 
+                    Your submission should be in one zip file, following the pattern <b><font color="#FF0000">CSSE-WEB-Lab-X-Team-Y.zip</font></b> to name the file, where X is the lab number (from 1 to 13), 
+                    and Y is the team number assigned. 
+                </p>
+                <br/>
+                <p class="indented" style="margin:0">
+                    Lab solutions will be posted to Angel on Thursday. Labs that are turned in late (after midnight Wednesday) will be assessed with a penalty of 20%.
+                    However, if the lab assignment is turned in after the solution is posted, you will get the full penalty (0 point). 
+                </p>
+                <br/>
+            </div>
+<!--##########################################################################################-->
+    <h2>Course Project</h2>  
+        <div id="course_project">
+                <p class="indented" style="margin:0">
+                    The course project will consist of design and development of a web application using the techniques learned in this course. 
+                    <span style="background-color: #FFFF00">Each group functions as a team to work on the project.</span> The purpose of this project is to help you gain in-depth experience with the development of Web Applications. 
+                    You need to do your course project step-by-step as we introduce new topics along the semester. Your project status will be periodically checked and a grade may be assigned. 
+                </p>
+                <br/>
+            </div>
+</div>
+<!--##########################################################################################-->
+<h1>Attendance Policy</h1>
+    <div id="attendance_policy">
+            <p style="margin:0">
+              Punctual attendance is mandatory for all class periods.  All excused absences must be supported by written documentation, such as a doctor’s receipt, athletics travel notice, ROTC notice, etc.  
+            </p>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Makeup Policy</h1>
+    <div id="makeup_policy">
+            <p style="margin:0">
+                Quizzes and exams will be made up only if the makeup is arranged before the scheduled quiz/exam period, and only in the case of an excused emergency.
+            </p>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Academic Integrity</h1>
+    <div id="academic_integrity">
+            <p style="margin:0">
+                <i>Penn State Erie puts a very high value on academic integrity, and violations are not tolerated.
+                    Academic integrity is one of Penn State’s four principles to which all students must abide.
+                    Any violation of academic integrity will receive academic and possible disciplinary sanctions,
+                    including the possible awarding of an XF grade which is recorded on the transcript and states that
+                    failure of the course was due to an act of academic dishonesty.  
+                    All acts of academic dishonesty are recorded so repeat offenders can be sanctioned accordingly. 
+                    Students are encouraged to review more information on academic integrity which can be found at: 
+                    <a href="http://www.pserie.psu.edu/faculty/academics/integrity.htm">http://www.pserie.psu.edu/faculty/academics/integrity.htm</a>
+                </i>
+            </p>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Support Services</h1>
+    <div id="support_services">
+            <ul style="list-style: none;padding:0;margin:0;">
+                <li>Learning Resource Center:  <a href="http://pennstatebehrend.psu.edu/academic/lrc/index.htm">http://pennstatebehrend.psu.edu/academic/lrc/index.htm</a></li>
+                <li>Library: <a href="http://www.behrend.psu.edu/academic/library/index.htm">http://www.behrend.psu.edu/academic/library/index.htm</a></li>
+                <li>Computer Center: <a href="http://www.behrend.psu.edu/compcntr/compindex.htm">http://www.behrend.psu.edu/compcntr/compindex.htm</a></li>
+            </ul>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Lab Safety</h1>
+    <div id="lab_safety">
+            <ul style="list-style: none;padding:0;margin:0;">
+                <li><a href="http://www.behrend.psu.edu/academic/engineering/StudentElecLabGuidelinesandSafety.pdf">http://www.behrend.psu.edu/academic/engineering/StudentElecLabGuidelinesandSafety.pdf</a></li>
+                <li><b>General Policies, Rules & Procedures:</b>  http://www.sa.psu.edu/ja/procedures.shtml</li>
+            </ul>
+            <br/>
+        </div>
+<!--##########################################################################################-->
+<h1>Note to students with disabilities</h1>
+    <div id="disabilities">
+            <p style="margin:0">
+                Penn State welcomes students with disabilities into the University's educational programs.  If you have a disability-related need for modifications or reasonable accommodations in this course, contact the Disability Specialist in the Office of Student Affairs, Room 115 Reed Union Building, 898-6111.
+            </p>
+        </div>
+<!--##########################################################################################-->
+</div>    
+</body>
+</html>

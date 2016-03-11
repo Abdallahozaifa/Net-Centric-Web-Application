@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+    window.onload = function(){
+		var x = document.getElementById("myframe");
+		var y = (x.contentWindow || x.contentDocument);
+		if (y.document)y = y.document;
+		y.body.style.backgroundColor = "blue";
+    };
+    </script>
+</head>
+<body>
+
+<iframe id="myframe" src="side.html"></iframe>
+
+<p>Click the button to change the background color of the document contained in the iframe.</p>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myframe");
+    var y = x.contentDocument;
+    y.body.style.backgroundColor = "red";
+}
+</script>
+
+</body>
+</html>
