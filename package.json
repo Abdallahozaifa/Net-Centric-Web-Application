@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/Abdallahozaifa/Net-Centric-Web-Application.git"
   },
-  "author": "Hozaifa Abdalla",
+  "author": [
+	"Hozaifa Abdala <Abdallahozaifa19527@gmail.com>",
+        "Daniel Lopez <alk5572@psu.edu>",
+    	"Alex Kiefer <alk5572@psu.edu>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Abdallahozaifa/Net-Centric-Web-Application/issues"
