@@ -350,14 +350,16 @@ var updateAnswer = function() {
     userAnswer = this.value;
 }
 
-//navDocument.location = '/EvalJSONP/side.html';
 $(document).ready(function() {
+	//Remove side window contents
+	parent.clearSideBar();
+	
     sessionStorage.idnum = "" + Math.round(1000000 * Math.random());
     $('input[type=radio][name=quiz]').on('click', updateAnswer);  
-    /*
+    
+	/*
      * Creates a Quiz Area Object
      */
-    
     quizArea = new QuizArea();
     feedBackArea = new FeedBackArea();
     feedBackArea.hideForm();

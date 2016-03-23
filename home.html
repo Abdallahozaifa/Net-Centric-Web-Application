@@ -25,11 +25,15 @@
         return sWin;
     }
     </script>
-    <script type="text/javascript" src="clock.js"></script> 
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="CanvasAnimation/clock.js"></script>
+    <link href="/CanvasAnimation/clock.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="navigationbar">
-        <h2 id="clock"></h2>
+<!--        <h2 id="clock"></h2>-->
+        <object id="svgClock" data="/CanvasAnimation/clock.svg#clock" type="image/svg+xml" width="100" height="100" align="right"></object>
         <a href="/"><img src="/ThreeRegion/logo.png" alt="webapplication logo"/></a>
         
         <span class="topnavigationlink">
@@ -43,6 +47,15 @@
         </span>
         <span class="topnavigationlink" id="quizlink">
             <a href="/EvalJSONP/quiz.html" target="cframe">Quiz</a>
+        </span>
+        <span class="topnavigationlink" id="schedulelink">
+            <a href="/Schedule/schedule.html" target="cframe">Schedule</a>
+        </span>
+        <span class="topnavigationlink">
+                <a href="CanvasAnimation/relax.html" target="cframe">Relax</a>
+        </span>
+        <span class="topnavigationlink">
+            <a href="LectureNotes/notes.html" target="cframe">Notes</a>
         </span>
     </div>
     <div id="sidenavigation">
