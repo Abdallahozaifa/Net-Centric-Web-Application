@@ -11,15 +11,17 @@ $(function () {
     $('#compat-list').append('<li>' + val[0] + ': ' + val[1] + '</li>');
   });
 
-  const DB_NAME = 'mdn-demo-indexeddb-epublications';
+  const DB_NAME = 'LectureNotesDB';
   const DB_VERSION = 1; // Use a long long for this value (don't use a float)
-  const DB_STORE_NAME = 'publications';
+  const DB_STORE_NAME = 'LectureNotes';
 
   var db;
 
   // Used to keep track of which view is displayed to avoid uselessly reloading it
   var current_view_pub_key;
 
+    
+    //Initialize an indexedDB
   function openDb() {
     console.log("openDb ...");
     var req = indexedDB.open(DB_NAME, DB_VERSION);
@@ -31,15 +33,17 @@ $(function () {
     req.onerror = function (evt) {
       console.error("openDb:", evt.target.errorCode);
     };
-
+      
+      
+    //Create the necessary indices 
     req.onupgradeneeded = function (evt) {
       console.log("openDb.onupgradeneeded");
       var store = evt.currentTarget.result.createObjectStore(
         DB_STORE_NAME, { keyPath: 'id', autoIncrement: true });
-
-      store.createIndex('lec-id', 'lec-id', { unique: true });
-      store.createIndex('slide-id', 'slide-id', { unique: true });
-      store.createIndex('note-id', 'note-id', { unique: true });
+        
+      store.createIndex('lectureID', 'lectureID', { unique: false });
+      store.createIndex('slideID', 'slideID', { unique: false });
+      store.createIndex('noteID', 'noteID', { unique: false });
       store.createIndex('note', 'note', { unique: false });
     };
   }
@@ -48,11 +52,13 @@ $(function () {
    * @param {string} store_name
    * @param {string} mode either "readonly" or "readwrite"
    */
+    //Opens an objectStore in the specified mode
   function getObjectStore(store_name, mode) {
     var tx = db.transaction(store_name, mode);
     return tx.objectStore(store_name);
   }
 
+    //Clears an objectStore
   function clearObjectStore(store_name) {
     var store = getObjectStore(DB_STORE_NAME, 'readwrite');
     var req = store.clear();
@@ -66,18 +72,10 @@ $(function () {
     };
   }
 
-  function getBlob(key, store, success_callback) {
-    var req = store.get(key);
-    req.onsuccess = function(evt) {
-      var value = evt.target.result;
-      if (value)
-        success_callback(value.blob);
-    };
-  }
-
   /**
    * @param {IDBObjectStore=} store
    */
+    //Displays all records in the given
   function displayNotes(store) {
     console.log("displayNotes");
 
@@ -139,6 +137,7 @@ $(function () {
     };
   }
 
+
   function newViewerFrame() {
     var viewer = $('#note-viewer');
     viewer.empty();
@@ -189,124 +188,104 @@ $(function () {
     });
   }
 
-
-  /**
-   * @param {string} biblioid
-   * @param {string} title
-   * @param {number} year
-   * @param {Blob=} blob
-   */
   function addNote(lectureID, slideID, noteID, noteVal) {
     console.log("addNote arguments:", arguments);
+    
+    //Make an object containing the relevant fields
     var obj = { lectureID: lectureID, slideID: slideID, noteID: noteID, noteVal:noteVal };
 
+    //Open the object store
     var store = getObjectStore(DB_STORE_NAME, 'readwrite');
       
-    var req;
-    try {
-      req = store.add(obj);
-    } catch (e) {
-      if (e.name == 'DataCloneError')
-        displayActionFailure("This engine doesn't know how to clone a Blob, " +
-                             "use Firefox");
-      throw e;
-    }
-    req.onsuccess = function (evt) {
-      console.log("Insertion in DB successful");
-      displayActionSuccess();
-      displayNotes(store);
-    };
-    req.onerror = function() {
-      console.error("addNote error", this.error);
-      displayActionFailure(this.error);
-    };
+    //Pass to check duplicates
+    checkDuplicates(obj, store);    
   }
+    
+    //Checks to see if the object exiss in the store
+    //If the object doesn't exist, add it
+    //Otherwise, continue
+    //If cursor is unable to be created, store is empty -- add object no matter what
+    function checkDuplicates(obj, store){
+        console.log("checkDuplicates");
+        store.openCursor().onsuccess = function(e){
+            console.log("cursor successful");
+            var cursor = e.target.result;
+            console.log(cursor);
+            if(cursor){
+                console.log("Cursor");
+                if (cursor.value.lectureID == obj.lectureID && cursor.value.slideID == obj.slideID && cursor.value.noteID == obj.noteID){
+                    console.log("SETTING DUPLICATES TO TRUE");
+                    displayActionFailure("Record already exists");
+                    displayNotes(store);
+                    return;
+                }
+                cursor.continue();
+            }
+            else if (cursor == null){
+                console.log("undefined");
+                addRecord(obj,store);
+                return;
+            }
+        }
+    }
+    
+    //Adds the data object to the specified store
+    //Updates message label with success or failure
+    function addRecord(obj, store){
+        var req;
+        try {
+          req = store.add(obj);
+        } catch (e) {
+            throw e;
+        }
+        
+        req.onsuccess = function (evt) {
+          console.log("Insertion in DB successful");
+          displayActionSuccess();
+          displayNotes(store);
+        };
+        req.onerror = function() {
+          console.error("addNote error", this.error);
+          displayActionFailure(this.error); 
+        };
+    }
 
-  /**
-   * @param {string} biblioid
-   */
+  //Removes the record with field values corresponding to the passed parameters
   function deleteNoteFromStore(lectureID, slideID, noteID) {
     console.log("deleteNoteFromStore:", arguments);
+    displayActionFailure("No matching record found");
   
+    var store = getObjectStore(DB_STORE_NAME, 'readwrite');
+    var success 
       
-    var transaction = db.transaction([DB_STORE_NAME], "readwrite");
-      
-      console.log("Transaction: ");
-      console.log(transaction);
-
-      
-/*    transaction.oncomplete = function(event){
-        console.log(event);
-    }*/
-    
-    var objectStore = transaction.objectStore(DB_STORE_NAME);
-
-    console.log("objectStore: ");
-      console.log(objectStore);
-      
-    objectStore.get(lectureID).onsuccess = function(e){
-      if (typeof e.target.result == 'undefined') {
-        displayActionFailure("No matching record found");
-        return;
+    store.openCursor().onsuccess = function(e){
+      var cursor = event.target.result;
+      if(cursor){
+          if (cursor.value.lectureID == lectureID && cursor.value.slideID == slideID && cursor.value.noteID == noteID){
+              var delReq = cursor.delete();
+              delReq.onsuccess = function(e){
+                  displayActionSuccess("Successfully deleted");
+                  displayNotes(store);
+              }
+              console.log("DELETED");
+              success = true;
+          }
+          cursor.continue();
       }
-      objectStore.delete(e.target.result.id);
     }
-      
-
-    
   }
 
-  /**
-   * @param {number} key
-   * @param {IDBObjectStore=} store
-   */
-  function deleteNote(key, store) {
-    console.log("deleteNote:", arguments);
-
-    if (typeof store == 'undefined')
-      store = getObjectStore(DB_STORE_NAME, 'readwrite');
-
-    // As per spec http://www.w3.org/TR/IndexedDB/#object-store-deletion-operation
-    // the result of the Object Store Deletion Operation algorithm is
-    // undefined, so it's not possible to know if some records were actually
-    // deleted by looking at the request result.
-    var req = store.get(key);
-    req.onsuccess = function(evt) {
-      var record = evt.target.result;
-      console.log("record:", record);
-      if (typeof record == 'undefined') {
-        displayActionFailure("No matching record found");
-        return;
-      }
-      // Warning: The exact same key used for creation needs to be passed for
-      // the deletion. If the key was a Number for creation, then it needs to
-      // be a Number for deletion.
-      req = store.delete(key);
-      req.onsuccess = function(evt) {
-        console.log("evt:", evt);
-        console.log("evt.target:", evt.target);
-        console.log("evt.target.result:", evt.target.result);
-        console.log("delete successful");
-        displayActionSuccess("Deletion successful");
-        displayNotes(store);
-      };
-      req.onerror = function (evt) {
-        console.error("deleteNote:", evt.target.errorCode);
-      };
-    };
-    req.onerror = function (evt) {
-      console.error("deleteNote:", evt.target.errorCode);
-    };
-  }
-
+    //Updates the message label above DB with a success message
   function displayActionSuccess(msg) {
     msg = typeof msg != 'undefined' ? "Success: " + msg : "Success";
     $('#msg').html('<span class="action-success">' + msg + '</span>');
   }
+    //Updates the message label above DB with a failure message
   function displayActionFailure(msg) {
     msg = typeof msg != 'undefined' ? "Failure: " + msg : "Failure";
     $('#msg').html('<span class="action-failure">' + msg + '</span>');
   }
+    //Clears the message label above DB
   function resetActionStatus() {
     console.log("resetActionStatus ...");
     $('#msg').empty();
@@ -326,7 +305,7 @@ $(function () {
       var slideID = $('#slide-id').val();
       var noteID = $('#note-id').val();
       var noteVal = $('#note').val();
-      if (!lectureID || !slideID) {
+      if (!lectureID || !slideID || !noteID) {
         displayActionFailure("Required field(s) missing");
         return;
       }
@@ -368,10 +347,6 @@ $(function () {
           displayActionFailure("Invalid note ID");
           return;
       }
-          
-        
-        
-      
     });
 
     $('#clear-store-button').click(function(evt) {

@@ -26,7 +26,7 @@ $(document).ready(function(){
 
         // Get SVG elements for the hands of the clock
         var o = document.getElementById("svgClock"); 
-        var oSvgDoc = o;
+        var oSvgDoc = o.contentDocument;
         var minhand = oSvgDoc.getElementById("minutehand");
         var hourhand = oSvgDoc.getElementById("hourhand");
 
