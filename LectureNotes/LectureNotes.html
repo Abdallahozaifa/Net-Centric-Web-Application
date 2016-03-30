@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Map</title>
+<link rel="stylesheet" type="text/css" href="LectureNotes.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>    
+<script type="text/javascript" src="database.js"></script>
+</head>
+
+<body>
+    
+    <h2>Lecture Notes: <br></h2>
+    
+    <div id="msg">
+    </div>
+
+    <form id="register-form">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label for="lec-id" class="required">
+                Lecture ID:
+              </label>
+            </td>
+            <td>
+              <input type="number" id="lec-id" name="lec-id" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="slide-id" class="required">
+                Slide ID: 
+              </label>
+            </td>
+            <td>
+              <input type="number" id="slide-id" name="slide-id"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="note-id" class="required">
+                Note ID: 
+              </label>
+            </td>
+            <td>
+              <input type="number" id="note-id" name="note-id" />
+            </td>
+          </tr>
+                      <tr>
+            <td>
+              <label for="note">
+                Note: 
+              </label>
+            </td>
+            <td>
+              <input type="text" id="note"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="button-pane">
+        <input type="button" id="add-button" value="Add Note" />
+        <input type="reset" id="register-form-reset"/>
+      </div>
+    </form>
+
+    <form id="delete-form">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label for="lec-id-to-delete">
+                Lecture ID:
+              </label>
+            </td>
+            <td>
+              <input type="number" id="lec-id-to-delete"
+                     name="lec-id-to-delete" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="slide-id-to-delete">
+                Slide ID: 
+              </label>
+            </td>
+            <td>
+              <input type="number" id="slide-id-to-delete"
+                     name="slide-id-to-delete" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="note-id-to-delete">
+                Note ID: 
+              </label>
+            </td>
+            <td>
+              <input type="number" id="note-id-to-delete"
+                     name="note-id-to-delete" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        
+        
+      <div class="button-pane">
+        <input type="button" id="delete-button" value="Delete Note" />
+        <input type="button" id="clear-store-button"
+               value="Clear the whole store" class="destructive" />
+      </div>
+    </form>
+
+    <form id="search-form">
+      <div class="button-pane">
+        <input type="button" id="search-list-button"
+               value="View Notes" />
+      </div>
+    </form>
+
+    <div>
+      <div id="note-msg">
+      </div>
+      <fieldset>
+        <legend>Lecture Notes List</legend>
+        <ul id="note-list">
+        </ul>
+      </fieldset>
+    </div>
+</body>
+</html>

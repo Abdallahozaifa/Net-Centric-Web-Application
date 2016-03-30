@@ -1,0 +1,51 @@
+#theTable {
+	border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.lab {
+    font-style: italic;
+}
+
+.work {
+    font-weight: bold;
+}
+
+.teamwork {
+    color: crimson;
+    font-weight: bold;
+}
+
+#orangeBG {
+    background-color: peachpuff;
+}
+#whiteBG {
+    background-color: white;
+}
+#purpleBG {
+    background-color: lavender;
+}
+
+.quiz {
+    color: red;
+}
+
+.header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#gray {
+    background-color: lightgrey;
+}
+
+#blueBG {
+    background-color: lightblue;
+}

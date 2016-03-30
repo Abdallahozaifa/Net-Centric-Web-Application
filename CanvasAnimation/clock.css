@@ -1,0 +1,97 @@
+#clock{
+	stroke:black;
+	stroke-linecap: round;
+	fill: #eef;
+}
+#face { 
+    stroke-width: 3px;
+}
+#ticks {
+    stroke-width: 2;
+}
+#hourhand { 
+    stroke-width: 5px;
+}
+#minutehand {
+    stroke-width: 3px;
+}
+#numbers {
+	font-family: sans-serif; font-size: 7pt; font-weight: bold;
+	text-anchor: middle; stroke: none; fill:black;
+}
+
+.animation {
+    margin-bottom: 50px;
+    margin-left: 35%;
+    margin-top: 5%;
+    height: 310px;
+    width: 700px;
+    -webkit-transform-style:preserve-3d;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 8s;
+    -moz-transform-style: preserve-3d;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 8s;
+}
+
+#flag1{
+    -webkit-transform: rotateY(0deg) translateZ(200px);
+    -moz-transform: rotateY(0deg) translateZ(200px);
+}
+#flag2{
+    -webkit-transform: rotateY(40deg) translateZ(200px);
+    -moz-transform: rotateY(40deg) translateZ(200px);
+}
+#flag3{
+    -webkit-transform: rotateY(80deg) translateZ(200px);
+}
+#flag4{
+    -webkit-transform: rotateY(120deg) translateZ(200px);
+    -moz-transform: rotateY(120deg) translateZ(200px);
+}
+#flag5{
+    -webkit-transform: rotateY(160deg) translateZ(200px);
+    -moz-transform: rotateY(1600deg) translateZ(200px);
+}
+#flag6{
+    -webkit-transform: rotateY(200deg) translateZ(200px);
+    -moz-transform: rotateY(200deg) translateZ(200px);
+}
+#flag7{
+    -webkit-transform: rotateY(240deg) translateZ(200px);
+    -moz-transform: rotateY(240deg) translateZ(200px);
+}
+#flag8{
+    -webkit-transform: rotateY(280deg) translateZ(200px);
+    -moz-transform: rotateY(280deg) translateZ(200px);
+}
+#flag9{
+    -webkit-transform: rotateY(320deg) translateZ(200px);
+}
+
+.flag{
+    margin-right: 25%;
+    margin-top: 15%;
+}
+
+@-webkit-keyframes spin {
+    0%    { -webkit-transform: rotateY(-360deg); }
+    50%   { -webkit-transform: rotateY(-180deg); }
+    100%  { -webkit-transform: rotateY(0deg); }
+}
+@-moz-keyframes spin {
+    0%    { -moz-transform: rotateY(-360deg); }
+    50%   { -moz-transform: rotateY(-180deg); }
+    100%  { -moz-transform: rotateY(0deg); }
+}
+
+[id^=flag]{
+    position: absolute;
+    left: 250px;
+    width: 20%;
+    height: 30%;
+}

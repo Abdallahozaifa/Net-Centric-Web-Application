@@ -1,3 +1,4 @@
+/*
 function gettool(req, res) {
 	var fileName = gettool.root +req.path;
   	res.sendFile(fileName, function (err) {
@@ -11,3 +12,4 @@ function gettool(req, res) {
 	});
 }
 exports.gettool = gettool;
+*/
