@@ -331,7 +331,7 @@ app.get('/Services/RosterJSP/roster', function(req, res){
 });
 
 app.get('/Services/RosterMVC/roster', function(req, res){
-    res.redirect("http://localhost:8080/WebRosterMVC");
+    res.redirect("http://localhost:8080/WebRosterMVC/Roster");
 });
 
 //******************************************************************************//

@@ -72,24 +72,34 @@ public class Roster implements Serializable {
         students.remove(student);
     }
     
-    public void deleteStudent(int index) {
-        students.remove(index);
+    public void deleteStudent(int teamNumber) {
+        for (int i = 0; i < students.size(); i++) {
+            if (Integer.parseInt(students.get(i).getteam()) == teamNumber)
+                students.remove(i);
+        }
+    }
+    
+    public void deleteStudent(String id) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getPSUID().equals(id)) {
+                students.remove(i);
+                return;
+            }
+        }
+    }
+    
+    public void deleteStudent(String firstName, String lastName) {
+        System.out.println("Tryin' to delete " + firstName + " " + lastName);
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getFirstName().equals(firstName))
+                if (students.get(i).getLastName().equals(lastName)) {
+                    students.remove(i);
+                    return;
+                }
+        }
     }
     
     public Student getHeader() {
         return header;
     }
-    
-    public void deleteTeam(int teamNumber) {
-        for (int i = 0; i < students.size(); i++) {
-            Student student = students.get(i);
-            
-            // if the team number is the same for that student, delete him
-            if (Integer.parseInt(student.getteam()) == teamNumber)
-                deleteStudent(i);
-        }
-    }
-
-    
-    
 }

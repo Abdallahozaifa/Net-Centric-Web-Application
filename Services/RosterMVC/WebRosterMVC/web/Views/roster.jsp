@@ -12,21 +12,21 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="/WebRosterMVC/Views/roster.js"></script>
+        <script src="Views/sort-table.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Roster</title>
     </head>
     
     <body>
-        <h1>Roster REST Application</h1>
+        <h1>RosterMVC REST Application</h1>
         <span>
-            <button id="browseButton">Browse</button>
-            <button id="refreshButton">Refresh</button>
             <button id="addStudentButton">Add Student</button>
             <button id="deleteStudentButton">Delete Student</button>
             <button id="deleteTeamButton">Delete Team</button>
         </span>
-        
-        <jsp:useBean id="RosterBean" class="Models.Roster">
+        <jsp:useBean id="RosterBean" class="Models.Roster" scope="application">
+            <p>Bean Created!</p>
+        </jsp:useBean>
         <% 
         java.util.ArrayList<Student> students = RosterBean.getStudents();
         
@@ -65,7 +65,6 @@
         out.println("</table>");
 
         %>
-        </jsp:useBean>
                      
         </table>
         

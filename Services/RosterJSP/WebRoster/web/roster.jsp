@@ -20,7 +20,7 @@
     </head>
     
     <body>
-        <h1>Hello World!</h1>
+        <h1>RosterJSP</h1>
         <jsp:useBean id="RosterBean" class="models.Roster">
         <% 
         java.util.ArrayList<models.Student> students = RosterBean.getStudents();
