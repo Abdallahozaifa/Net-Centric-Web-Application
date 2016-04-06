@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebRosterMVC" version="1.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        
+    <display-name>WebRosterMVC</display-name>   
+    <welcome-file-list>
+        <welcome-file>Views/roster.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>Controller.RosterCRUDController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Roster</url-pattern>
+    </servlet-mapping>
+</web-app>
+    
