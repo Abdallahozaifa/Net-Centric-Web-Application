@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.set("jsonp callback", true);
 
-app.listen(8080, function() {
-  console.log('Server running at http://127.0.0.1:8080/');
+app.listen(8888, function() {
+  console.log('Server running at http://127.0.0.1:8888/');
 });
 
 //Root directory is not working for app.use()
@@ -37,6 +37,8 @@ app.use('/CloudChat', express.static('CloudChat'));
 app.use('/ThreeRegion', express.static('ThreeRegion'));
 app.use('/CanvasAnimation', express.static('CanvasAnimation'));
 app.use('/LectureNotes', express.static('LectureNotes'));
+app.use('/Services/RosterJSP', express.static('Services/RosterJSP'));
+app.use('/Services', express.static('Services'));
 
 
 
@@ -99,6 +101,7 @@ app.get('/tableofcontents.js', function (req, res) {
 
 
 
+
 //*****************************************************************************//
 //*****************************EvalTool functions******************************//
 //*****************************************************************************//
@@ -124,6 +127,9 @@ app.post('/EvalTool/submit', function(req, res) {
     res.end();
     
 });
+
+
+
 app.post('/EvalTool/quiz',function(req,res){
         
     var id = req.body["idnum"];
@@ -209,9 +215,6 @@ app.get('/EvalJSONP/JSONP/prev', function(req, res) {
 app.get('/Schedule/schedule.json', function(req, res){
     res.send(schedule);
 });
-
-
-
 
 
 //*****************************************************************************//
@@ -319,7 +322,17 @@ function createIdEntry(id) {
     return index;       
 }
 
+//******************************************************************************//
+//***************************WEB SERVICES FUNCTIONS*****************************//
+//******************************************************************************//
 
+app.get('/Services/RosterJSP/roster', function(req, res){
+    res.redirect("http://localhost:8080/WebRoster/roster.jsp");
+});
+
+app.get('/Services/RosterMVC/roster', function(req, res){
+    res.redirect("http://localhost:8080/WebRosterMVC/Roster");
+});
 
 //******************************************************************************//
 //*********************************DATA*****************************************//

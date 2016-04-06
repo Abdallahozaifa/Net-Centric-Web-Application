@@ -1,1 +1,13 @@
 node_modules
+/Services/RosterMVC/WebRosterMVC/nbproject/private/
+/Services/RosterMVC/WebRosterMVC/build/
+/Services/RosterMVC/WebRosterMVC/dist/
+/Services/RosterJSP/WebRoster/build/
+/Services/RosterJSP/WebRoster/nbproject/private/
+/Services/RosterMVC copy/WebRosterMVC/build/
+/Services/RosterMVC copy/WebRosterMVC/dist/
+/Services/RosterMVC copy/WebRosterMVC/nbproject/private/
+/Services/RosterMVC/WebRosterMVC copy/build/
+/Services/RosterMVC/WebRosterMVC copy/dist/
+/Services/RosterMVC/WebRosterMVC copy/nbproject/private/
+/Services/RosterJSP/WebRoster/dist/
