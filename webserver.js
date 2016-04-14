@@ -39,7 +39,33 @@ app.use('/CanvasAnimation', express.static('CanvasAnimation'));
 app.use('/LectureNotes', express.static('LectureNotes'));
 app.use('/Services/RosterJSP', express.static('Services/RosterJSP'));
 app.use('/Services', express.static('Services'));
+app.use('/AmazonBook', express.static('AmazonBook'));
 
+// Amazon Web Services Functions
+app.post('/amazonWebServiceSearch', function(req, res) {
+    var accessID = req.param('accessID');
+    var secretKey = req.param('secretKey');
+    var searchQuery = req.param('searchQuery');
+    var searchIndex = req.param('searchIndex');
+    var resultsInfo = [];
+        
+    if (accessID != null && secretKey != null && searchQuery != null) {
+        var prodAdv = aws.createProdAdvClient(accessID, secretKey, 'dalofeco-20');
+        prodAdv.call("ItemSearch", {SearchIndex: searchIndex, Keywords: searchQuery}, function(err, result) {
+            var items = result.Items.Item;
+            for (var i in items) {
+                resultsInfo.push(items[i].ItemAttributes);    
+            }
+            res.send(resultsInfo);
+        });
+        
+        
+        
+    } else
+        console.log("One of the parameters are null. Error in AWS search. node.js");
+    
+    
+});
 
 
 
@@ -97,9 +123,6 @@ app.get('/tableofcontents.js', function (req, res) {
 	res.send(data);
 	});	
 });
-
-
-
 
 
 //*****************************************************************************//
@@ -332,6 +355,11 @@ app.get('/Services/RosterJSP/roster', function(req, res){
 
 app.get('/Services/RosterMVC/roster', function(req, res){
     res.redirect("http://localhost:8080/WebRosterMVC/Roster");
+});
+
+app.get('/RosterJTable', function(req,res){
+    console.log("Someone indeed has clicked on RosterJTable!");
+    res.redirect("http://127.0.0.1:8080/WebRosterJTable/");
 });
 
 //******************************************************************************//
