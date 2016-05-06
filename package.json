@@ -11,9 +11,9 @@
     "url": "git+https://github.com/Abdallahozaifa/Net-Centric-Web-Application.git"
   },
   "author": [
-	"Hozaifa Abdala <Abdallahozaifa19527@gmail.com>",
-        "Daniel Lopez <alk5572@psu.edu>",
-    	"Alex Kiefer <alk5572@psu.edu>"
+    "Hozaifa Abdala <Abdallahozaifa19527@gmail.com>",
+    "Daniel Lopez <alk5572@psu.edu>",
+    "Alex Kiefer <alk5572@psu.edu>"
   ],
   "license": "MIT",
   "bugs": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "nodemailer": "^2.2.1"
+    "nodemailer": "^2.3.2"
   },
   "devDependencies": {}
 }

@@ -22,10 +22,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.set("jsonp callback", true);
 
-app.listen(8888, function() {
-  console.log('Server running at http://127.0.0.1:8888/');
-});
-
 //Root directory is not working for app.use()
 app.use('/', express.static(__dirname+'/public'));
 
@@ -759,7 +755,7 @@ var schedule = [
         "project":"",
         "notes":""
     }
-]
+];
 
 
 /*
@@ -844,3 +840,7 @@ var Questions = [
     }    
 ];
 
+/* Listens on the cloud9 Port */
+app.listen(process.env.PORT, function() {
+    console.log('App listening at https://net-centric-web-application-abdallahozaifa.c9users.io/');
+});
